@@ -345,7 +345,7 @@ main{position:relative;z-index:1;}
 .sectors{position:relative;z-index:1;padding-bottom:clamp(40px,6vw,90px);}
 .sectors .sec-head{text-align:center;position:relative;padding-bottom:30px;border-bottom:1px solid var(--line-soft);}
 .func-grid{
-  display:grid;grid-template-columns:1.1fr .9fr 1fr .9fr;gap:22px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
   margin-top:34px;
 }
 .func-card{
