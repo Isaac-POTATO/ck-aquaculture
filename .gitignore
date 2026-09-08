@@ -1,0 +1,17 @@
+# 本地归档/素材（不上公网、不部署）
+素材文件/
+
+# 本地开发与临时产物
+CLAUDE.md
+.idea/
+.vscode/
+node_modules/
+_work_tmp/
+_verify_tmp/
+_bg_tmp/
+*.log
+
+# OS 噪音
+.DS_Store
+Thumbs.db
+desktop.ini

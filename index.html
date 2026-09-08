@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>深蓝智养 · 深海玻璃拟态官网</title>
+<!-- 样式 / 脚本外置，图片统一走 assets/（本地相对路径，双击可直接打开） -->
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- 页面背景氛围光斑（纯装饰） -->
+<div class="glow g1" aria-hidden="true"></div>
+<div class="glow g2" aria-hidden="true"></div>
+
+<!-- ================= 1. 顶部导航 ================= -->
+<header class="site-nav">
+  <nav class="nav-bar" aria-label="主导航">
+    <!-- Logo：品牌图 + 字 -->
+    <a class="logo" href="#top">
+      <span class="logo-mark"><img src="assets/logo.jpg" alt="深蓝智养" /></span>
+      <span class="logo-text">CK Aquaculture</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="#top">首页</a></li>
+      <li><a href="#sectors">App核心功能</a></li>
+      <li><a href="#partners">合作伙伴</a></li>
+      <li><a href="#team">核心团队</a></li>
+      <li><a href="#about">关于我们</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="icon-search" type="button" aria-label="搜索">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a class="nav-cta" href="#contact">立即咨询</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ================= 2. 首屏主视觉（左浅文字区 · 右深海） =================
+       背景 = 背景图/新首页背景.jpg，已在 css/style.css 的 .hero 中设置 -->
+  <section class="hero" id="top">
+    <!-- 深海浮光粒子画布（纯装饰，逻辑在 js/main.js） -->
+    <canvas class="fx-particles" aria-hidden="true"></canvas>
+    <div class="hero-copy">
+      <img class="hero-logo" src="assets/logo-cut.png" alt="深蓝智养" />
+      <h1>深耕深海，<em>智养未来</em></h1>
+      <p class="intro">让每一份投资都扎根于真实的蓝色产业，<br />每日收获可持续的财富回报。</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#intro">了解产业</a>
+        <a class="btn-ghost"   href="#stats">查看项目</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 正文长卷（背景 = 背景图/新背景2.png，纵向整幅铺开）
+       长卷高度与图片同比例(1551:2757)，滚动时可把整张图从头看到尾：
+       顶部亮海面 → 中上部亮青蓝带 → 下部渐暗海床。两块内容区依次
+       浮于亮青蓝带（数据卡）与其下转暗段（功能卡）。
+       ==================================================================== -->
+  <div class="sea-roll" id="ocean" aria-hidden="false">
+
+  <!-- 深海浮游光点粒子画布（纯装饰，逻辑在 js/main.js，随长卷滚动） -->
+  <canvas class="fx-deep" aria-hidden="true"></canvas>
+
+  <!-- ================= 3. 中部 · 数据看板（文案=docx「数据全公开，随时可查」） ================= -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-tag">DIGITAL OCEAN · 数字海洋看板</span>
+        <h2 class="sec-title">数据全公开，随时可查</h2>
+        <p class="sec-sub">您可以在App内查看每个养殖批次的生长曲线、投喂记录、水质指标，真正做到“看得见”的投资。</p>
+      </header>
+      <div class="stat-grid">
+
+        <div class="stat-card reveal">
+          <div class="stat-icon">
+            <!-- 生长曲线 -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5.2-6 3.8 3L18.5 7"/><path d="M14.5 7H18.5v4"/></svg>
+          </div>
+          <div>
+            <div class="stat-name">生长曲线</div>
+          </div>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-icon">
+            <!-- 投喂记录 -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h13a3 3 0 0 1 0 6H7a3 3 0 0 0 0 6h13"/><path d="M4 21h13"/></svg>
+          </div>
+          <div>
+            <div class="stat-name">投喂记录</div>
+          </div>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-icon">
+            <!-- 水质指标 -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.3 6 11a6 6 0 0 1-12 0c0-4.7 6-11 6-11z"/><path d="M9.5 14a2.6 2.6 0 0 0 2.5 2.6"/></svg>
+          </div>
+          <div>
+            <div class="stat-name">水质指标</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 数字海洋看板 · 三卡之下居中一台数据大屏手机（透明抠图，纯视觉装饰） -->
+      <!-- phone-app.png：App 双机界面实拍图（用户提供，已抠白底），替下旧 phone-6.png -->
+      <figure class="stats-phone reveal">
+        <img src="assets/phones/phone-app.png" alt="App 内实时数据看板界面" />
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ================= 4. 底部 · App核心功能四卡（文案=docx「App核心功能」四项） ================= -->
+  <section class="sectors" id="sectors">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-tag">SMART AQUACULTURE · 智养全链服务</span>
+        <h2 class="sec-title">App核心功能</h2>
+        <p class="sec-sub">我们的投资App将养殖项目拆分为标准化的投资份额，用户可按季参与，享受养殖周期结束后产生的销售利润分红。</p>
+      </header>
+      <div class="func-grid">
+
+        <div class="func-card reveal">
+          <div class="func-icon">
+            <!-- 折线上扬：一键投资 -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5.2-6 3.8 3L18.5 7"/><path d="M14.5 7H18.5v4"/></svg>
+          </div>
+          <div class="func-bar"></div>
+          <p><b class="term">一键投资</b>：选择季度养殖计划，输入金额，即刻参与。</p>
+        </div>
+
+        <div class="func-card reveal">
+          <div class="func-icon">
+            <!-- 信号波：每日收益更新 -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5a10.6 10.6 0 0 1 15 0"/><path d="M7.5 15.5a6.4 6.4 0 0 1 9 0"/><path d="M10.5 18.5a2.4 2.4 0 0 1 3 0"/></svg>
+          </div>
+          <div class="func-bar"></div>
+          <p><b class="term">每日收益更新</b>：养殖过程中鱼群生长情况与市场行情实时影响预估收益，App每日推送最新数据。</p>
+        </div>
+
+        <div class="func-card reveal">
+          <div class="func-icon">
+            <!-- 环形财富：资产全景看板 -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+          </div>
+          <div class="func-bar"></div>
+          <p><b class="term">资产全景看板</b>：总资产、累计投入、已实现收益、待结算收益等一目了然。</p>
+        </div>
+
+        <div class="func-card reveal">
+          <div class="func-icon">
+            <!-- 盾牌＋锁：安全加密 -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.2c0 4.8-3.2 8.4-7 9.8-3.8-1.4-7-5-7-9.8V6z"/><path d="M9.8 12h4.4v3.4h-4.4z"/><circle cx="12" cy="10" r="1.2"/></svg>
+          </div>
+          <div class="func-bar"></div>
+          <p><b class="term">安全加密</b>：账户登录、提现、信息修改均需多重验证，保障资金与隐私安全。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作机构 · 星座式展示：中央 CK logo + 四角机构名 + 连线（替代原风影照片彩带） -->
+  <div class="partner-constellation">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-tag">STRATEGIC PARTNERS · 协同共进</span>
+        <h2 class="sec-title">合作机构</h2>
+      </header>
+
+      <div class="constellation">
+        <!-- 背景连线（SVG 装饰） -->
+        <svg class="con-links" viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <g fill="none" stroke="rgba(14,89,180,.30)" stroke-width="1.6">
+            <path d="M500 310 L175 130"/>
+            <path d="M500 310 L825 130"/>
+            <path d="M500 310 L175 490"/>
+            <path d="M500 310 L825 490"/>
+          </g>
+          <g fill="#0E9C9E">
+            <circle cx="175" cy="130" r="6"/>
+            <circle cx="825" cy="130" r="6"/>
+            <circle cx="175" cy="490" r="6"/>
+            <circle cx="825" cy="490" r="6"/>
+          </g>
+          <g stroke="rgba(14,89,180,.22)" stroke-width="1.6" fill="none">
+            <circle cx="500" cy="310" r="200"/>
+            <circle cx="500" cy="310" r="248"/>
+          </g>
+        </svg>
+
+        <!-- 中央 CK logo -->
+        <div class="con-center reveal">
+          <img class="con-logo" src="assets/logo-cut-badge.png" alt="CK Aquaculture 深蓝智养" />
+        </div>
+
+        <!-- 四角机构名 -->
+        <div class="con-node con-a reveal"><span class="con-ico">🐟</span><span class="con-name">AquaChile</span></div>
+        <div class="con-node con-b reveal"><span class="con-ico">🌊</span><span class="con-name">Nissui Corporation</span></div>
+        <div class="con-node con-c reveal"><span class="con-ico">🦀</span><span class="con-name">Trident Seafoods</span></div>
+        <div class="con-node con-d reveal"><span class="con-ico">🦐</span><span class="con-name">Pescanova</span></div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /.sea-roll -->
+
+  <!-- =====================================================================
+       5. 深海正文流 —— 长卷之后，接整份 docx 单页文案的其余板块
+          （深蓝纯底可无限延伸；文字逐字照抄 docx，仅靠排版/间距/玻璃表达）
+       ===================================================================== -->
+  <div class="body-flow">
+
+    <!-- 5.1 我们做什么 -->
+    <section class="flow-sec" id="intro">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-tag">WHAT WE DO · 深蓝产业</span>
+          <h2 class="sec-title">我们做什么</h2>
+        </header>
+        <div class="lead reveal">
+          <p>CK Aquaculture 专注于深远海智能化养殖，利用大型抗风浪网箱、水下监测系统和自动化投喂技术，在优质海域开展高价值鱼类（如金鲳鱼、石斑鱼、三文鱼等）的规模化养殖。我们的投资App将养殖项目拆分为标准化的投资份额，用户可按季参与，享受养殖周期结束后产生的销售利润分红。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.2 为什么选择深海养殖 -->
+    <section class="flow-sec">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-tag">WHY DEEP SEA · 蓝色经济</span>
+          <h2 class="sec-title">为什么选择深海养殖</h2>
+        </header>
+        <div class="why-sea-grid">
+          <article class="glass-cell reveal">
+            <p><b class="term">资源稀缺性</b>：近海养殖空间趋于饱和，深远海拥有更洁净的水质和更广阔的发展潜力，是国家重点扶持的蓝色经济方向。</p>
+          </article>
+          <article class="glass-cell reveal">
+            <p><b class="term">市场需求旺盛</b>：全球高端海产品消费持续增长，优质深海鱼类供不应求，价格长期看涨。</p>
+          </article>
+          <article class="glass-cell reveal">
+            <p><b class="term">技术壁垒高</b>：我们掌握成熟的深海网箱养殖技术，具备抗风浪、防病害、智能监测等核心能力，有效降低养殖风险。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.3 合作伙伴与投资机构 -->
+    <section class="flow-sec" id="partners">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-tag">PARTNERS · 全球协作</span>
+          <h2 class="sec-title">合作伙伴与投资机构</h2>
+        </header>
+        <p class="lead reveal">CK Aquaculture 的发展离不开全球顶尖合作伙伴的支持与信任。我们与以下机构建立了深度战略合作关系：</p>
+        <div class="partner-brand-row reveal">
+          <img class="partner-brand" src="assets/logo-cut-badge.png" alt="CK Aquaculture 深蓝智养" />
+        </div>
+        <div class="partner-grid">
+          <article class="glass-cell reveal">
+            <p>🌊 <b>Hatch Blue</b> —— 全球领先的水产养殖专业投资机构，专注于可持续水产养殖技术的投资与孵化。Hatch Blue 旗下 Blue Revolution Fund 深度参与全球水产养殖创新项目的资本布局。CK Aquaculture 与 Hatch Blue 在深海养殖技术评估与产业化落地方面保持密切协作。</p>
+          </article>
+          <article class="glass-cell reveal">
+            <p>🏦 <b>欧洲投资银行（European Investment Bank）</b> —— 欧盟官方投资机构，长期支持可持续蓝色经济项目。EIB 通过绿色金融工具为水产养殖技术创新提供资本支持，CK Aquaculture 的深海养殖基地建设已纳入其可持续蓝色经济融资评估体系。</p>
+          </article>
+          <article class="glass-cell reveal">
+            <p>🌏 <b>Ocean 14 Capital</b> —— 专注于海洋与蓝色经济的专业投资基金，致力于解决海洋过度捕捞、栖息地退化等全球性挑战。Ocean 14 Capital 对 CK Aquaculture 的可持续养殖模式给予了高度认可，并持续关注公司的技术升级与产能扩张。</p>
+          </article>
+          <article class="glass-cell reveal">
+            <p>🌍 <b>Builders Vision</b> —— 美国影响力投资平台，致力于通过资本推动可持续食品与农业系统的变革。Builders Vision 深度布局水产养殖领域，CK Aquaculture 的绿色养殖理念与其投资方向高度契合。</p>
+          </article>
+        </div>
+        <p class="lead after reveal">这些合作伙伴的加入，不仅为 CK Aquaculture 提供了资本与资源支持，更从技术、市场、风控等多维度为平台的发展保驾护航。</p>
+      </div>
+    </section>
+
+    <!-- 5.4 核心团队 -->
+    <section class="flow-sec" id="team">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-tag">TEAM · 核心力量</span>
+          <h2 class="sec-title">核心团队</h2>
+        </header>
+        <p class="lead reveal">CK Aquaculture 的团队由水产养殖专家、海洋工程师和金融科技从业者组成，拥有超过20年的行业经验。</p>
+        <div class="team-panel reveal">
+          <div class="team-grid">
+
+            <article class="team-card reveal">
+              <figure class="team-photo"><img src="assets/team/member-1.png" alt="James R. Thornton" /></figure>
+              <div class="team-info">
+                <div class="team-cell-head">👨‍💼 James R. Thornton —— 创始人兼首席执行官（CEO）</div>
+                <p class="team-desc">拥有25年水产养殖与海洋生物技术领域从业经验，曾在美国多家大型水产企业担任高管职务。Thornton 先生持有加州大学戴维斯分校海洋生物学博士学位，是国际水产养殖协会（WAS）资深会员。他主导了多个跨国深海养殖项目的规划与落地，对深远海网箱养殖技术、病害防控体系及产业链整合有深刻洞察。</p>
+              </div>
+            </article>
+
+            <article class="team-card reveal">
+              <figure class="team-photo"><img src="assets/team/member-2.png" alt="Dr. Elena Vasquez" /></figure>
+              <div class="team-info">
+                <div class="team-cell-head">👩‍💼 Dr. Elena Vasquez —— 首席技术官（CTO）</div>
+                <p class="team-desc">海洋工程与智能装备专家，麻省理工学院海洋工程博士。Vasquez 博士曾在全球领先的海洋科技企业担任技术负责人，主导开发了多套水下智能监测系统和AI养殖预警平台。她带领 CK Aquaculture 技术团队完成了深海网箱抗风浪设计、水下传感器网络部署及养殖数据智能分析系统的搭建，是公司技术壁垒的核心缔造者。</p>
+              </div>
+            </article>
+
+            <article class="team-card reveal">
+              <figure class="team-photo"><img src="assets/team/member-3.png" alt="Michael Chen" /></figure>
+              <div class="team-info">
+                <div class="team-cell-head">👨‍💼 Michael Chen —— 市场与战略总监（CMO）</div>
+                <p class="team-desc">拥有15年跨境金融与新兴市场拓展经验，曾任多家国际投资机构的亚太区负责人。Chen 先生熟悉全球资本市场运作规则，主导了 CK Aquaculture 多轮融资与国际化战略布局。他负责公司的全球市场拓展、品牌建设与投资者关系管理，致力于将 CK Aquaculture 打造为全球领先的深海养殖投资平台。</p>
+              </div>
+            </article>
+
+            <article class="team-card reveal">
+              <figure class="team-photo"><img src="assets/team/member-4.png" alt="Sarah Kim" /></figure>
+              <div class="team-info">
+                <div class="team-cell-head">👩‍💼 Sarah Kim —— 运营与风控总监（COO）</div>
+                <p class="team-desc">金融风险管理专家，持有CFA和FRM双认证，拥有12年金融机构风控与合规管理经验。Kim 女士曾在国际知名投资银行担任风控部门负责人，擅长构建多层级风险控制体系。她全面负责 CK Aquaculture 的财务风控、合规审查与运营管理，确保每一笔投资资金的安全与透明。</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.6 为什么选择 CK Aquaculture -->
+    <section class="flow-sec" id="why">
+      <div class="container">
+        <div class="why-panel">
+          <div class="why-lead">
+            <span class="sec-tag">WHY US · 选择理由</span>
+            <h2 class="sec-title">为什么选择 CK Aquaculture</h2>
+          </div>
+          <div class="why-stack">
+            <article class="why-card reveal">
+              <div class="why-thumb">
+                <img class="why-el" src="assets/why-el/el-01.png" alt="">
+                <img class="why-el" src="assets/why-el/el-02.png" alt="">
+              </div>
+              <div class="why-body">
+                <h3 class="why-name"><span class="ic">🛡️</span>合法合规，透明运营</h3>
+                <p>公司在美国科罗拉多州依法注册，所有经营资质可公开查询。平台不设多层分销，资金流向清晰。</p>
+                              </div>
+            </article>
+            <article class="why-card reveal">
+              <div class="why-thumb">
+                <img class="why-el" src="assets/why-el/el-03.png" alt="">
+                <img class="why-el" src="assets/why-el/el-04.png" alt="">
+              </div>
+              <div class="why-body">
+                <h3 class="why-name"><span class="ic">🐟</span>实体产业，收益有根基</h3>
+                <p>您的投资对应的是真实的鱼苗、饲料和海水，不是空泛的概念。养殖周期结束后，鱼获销售回款即成为您的分红来源。</p>
+                              </div>
+            </article>
+            <article class="why-card reveal">
+              <div class="why-thumb">
+                <img class="why-el" src="assets/why-el/el-05.png" alt="">
+                <img class="why-el" src="assets/why-el/el-06.png" alt="">
+              </div>
+              <div class="why-body">
+                <h3 class="why-name"><span class="ic">⚙️</span>技术驱动，风险可控</h3>
+                <p>深海网箱抗风浪能力高，智能投喂系统降低饲料浪费，疾病防控体系成熟。我们以技术手段将养殖死亡率控制在行业极低水平。</p>
+                              </div>
+            </article>
+            <article class="why-card reveal">
+              <div class="why-thumb">
+                <img class="why-el" src="assets/why-el/el-09.png" alt="">
+                <img class="why-el" src="assets/why-el/el-10.png" alt="">
+              </div>
+              <div class="why-body">
+                <h3 class="why-name"><span class="ic">📊</span>数据全公开，随时可查</h3>
+                <p>您可以在App内查看每个养殖批次的生长曲线、投喂记录、水质指标，真正做到“看得见”的投资。</p>
+                              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.7 关于我们 -->
+    <section class="flow-sec" id="about">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-tag">ABOUT · 关于 CK Aquaculture</span>
+          <h2 class="sec-title">关于我们</h2>
+        </header>
+
+        <div class="sub-block reveal">
+          <h3 class="sub-title">公司概况</h3>
+          <p>CK Aquaculture Ltd 是一家总部位于美国科罗拉多州的创新型水产企业，通过自研的深海养殖投资App，将先进养殖技术与数字金融相结合，为全球个人投资者提供低门槛、高透明、可追溯的深海养殖投资项目。</p>
+          <p>我们不依赖复杂的层级模式，只专注用真实的养殖收益为您创造价值。于2022年11月1日正式注册成立，法定注册地址为1580 Logan Street, Denver, Colorado, USA。公司创始团队由水产养殖专家、海洋工程师和金融科技从业者组成，拥有超过20年的行业经验。</p>
+        </div>
+
+        <div class="sub-block reveal">
+          <h3 class="sub-title">我们的使命</h3>
+          <p>让可持续的海洋资源惠及大众。我们不追求短期的金融杠杆，而是扎根于实体养殖，通过技术提升产量与品质，再将利润公平分配给投资者。</p>
+        </div>
+
+        <div class="sub-block reveal">
+          <h3 class="sub-title">我们的技术实力</h3>
+          <ul class="tick-list">
+            <li><span class="tick-head">养殖基地</span>：与多个沿海国家合作，拥有专属的深远海养殖牧场，水域面积达数千公顷。</li>
+            <li><span class="tick-head">智能监控</span>：水下摄像头、溶解氧传感器、水温流速仪实时回传数据，AI预警系统提前发现异常，确保鱼群健康成长。</li>
+            <li><span class="tick-head">绿色可持续</span>：采用环保饲料和循环水处理工艺，减少对海洋生态的影响，符合国际可持续水产养殖标准。</li>
+          </ul>
+        </div>
+
+        <div class="sub-block reveal">
+          <h3 class="sub-title">财务风控</h3>
+          <ul class="tick-list">
+            <li><span class="tick-head">专款专用</span>：用户投资资金直接用于当季养殖项目的饲料、鱼苗、设备维护等刚性支出，不挪用至其他领域。</li>
+            <li><span class="tick-head">保险保障</span>：为养殖网箱购买财产保险和自然灾害险，降低极端天气带来的损失。</li>
+            <li><span class="tick-head">第三方审计</span>：每季度聘请独立会计师事务所对养殖成本和销售流水进行审计，结果向投资者公开。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.8 联系我们 -->
+    <section class="flow-sec" id="contact">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-tag">CONTACT · 联系方式</span>
+          <h2 class="sec-title">联系我们</h2>
+        </header>
+        <div class="contact-list reveal">
+          <div class="contact-row"><span class="c-key">公司全称：</span><span class="c-val">CK Aquaculture Ltd（CK 水产有限公司）</span></div>
+          <div class="contact-row"><span class="c-key">成立日期：</span><span class="c-val">2022年11月1日</span></div>
+          <div class="contact-row"><span class="c-key">注册地址：</span><span class="c-val">1580 Logan Street, Denver, Colorado, USA</span></div>
+          <div class="contact-row"><span class="c-key">官方网站：</span><span class="c-val"><a class="text-link" href="https://ckaquaculture.com" target="_blank" rel="noopener">https://ckaquaculture.com</a></span></div>
+          <div class="contact-row"><span class="c-key">客服邮箱：</span><span class="c-val"><a class="text-link" href="mailto:support@ckaquaculture.com">support@ckaquaculture.com</a>（请通过App内反馈渠道优先）</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.9 立即加入 -->
+    <section class="flow-sec join" id="join">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-tag">JOIN US · 立即加入</span>
+          <h2 class="sec-title">立即加入</h2>
+        </header>
+        <p class="lead reveal">开启您的深海养殖投资只需2步：</p>
+        <div class="join-grid">
+          <div class="join-step reveal"><div class="join-name">1. 下载App（iOS/Android）</div></div>
+          <div class="join-step reveal"><div class="join-name">2. 注册账户</div></div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.body-flow -->
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
