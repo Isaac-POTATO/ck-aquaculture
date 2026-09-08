@@ -454,6 +454,34 @@ main{position:relative;z-index:1;}
   background:var(--accent);
 }
 
+/* —— 放大版分节（我们做什么 / 为什么选择深海养殖）—— 更醒目，统一节奏 —— */
+.xl .sec-title{font-size:clamp(40px,5.4vw,66px);}
+.xl .lead{font-size:clamp(19px,1.5vw,24px);line-height:2.02;}
+.xl .why-sea-grid .glass-cell p{font-size:clamp(16px,1.3vw,20px);}
+
+/* 我们做什么 · 移入长卷珊瑚区：透明贴底 + 径向暗化托白字 */
+.sea-intro{
+  position:relative;z-index:1;
+  margin-top:clamp(46px,6vw,96px);
+  padding:clamp(30px,3.4vw,52px) clamp(20px,4vw,48px);
+  text-align:center;
+}
+.sea-intro::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(58% 80% at 50% 50%, rgba(2,7,22,.62) 0%, rgba(2,7,22,.34) 55%, rgba(2,7,22,0) 80%);
+  border-radius:30px;
+  z-index:-1;pointer-events:none;
+}
+.sea-intro .container{position:relative;z-index:1;}
+.sea-intro .sec-head{text-align:center;max-width:860px;margin:0 auto clamp(18px,2vw,30px);}
+.sea-intro .lead{max-width:920px;margin:0 auto;text-align:center;color:#EAF4FF;}
+
+@media (max-width:640px){
+  .xl .sec-title{font-size:clamp(30px,8.5vw,40px);}
+  .xl .lead{font-size:18px;}
+  .xl .why-sea-grid .glass-cell p{font-size:16px;}
+}
+
 /* —— 伙伴双栏长文 —— */
 .partner-brand{
   display:block;box-sizing:content-box;height:96px;width:auto;
