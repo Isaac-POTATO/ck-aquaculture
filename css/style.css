@@ -665,6 +665,9 @@ main{position:relative;z-index:1;}
   .hero-copy h1{font-size:clamp(30px,8.4vw,40px);letter-spacing:.2px;}
   .hero-copy .intro{font-size:17px;}
   .func-grid{grid-template-columns:1fr;}
+  .func-icon{margin:0 auto;}
+  .func-bar{margin:22px auto 16px;}
+  .func-card p{text-align:center;}
   /* 窄屏：长卷退化为 cover 亮底（不追求看完整幅长图，以文字可读为先） */
   .sea-roll{aspect-ratio:auto;padding:70px 0 60px;background-size:100% 100%,100% 100%,cover;background-position:top center,top center,50% 24%;}
   .stats{margin-top:0;}
