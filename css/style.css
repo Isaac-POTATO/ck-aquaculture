@@ -362,13 +362,23 @@ main{position:relative;z-index:1;}
 /* 窄屏：机构名收缩、连线缩放贴合 */
 @media (max-width:720px){
   .constellation{padding:clamp(38px,8vw,56px) clamp(18px,4vw,40px);border-radius:24px;}
-  .con-name{font-size:clamp(13px,3.8vw,17px);}
+  .con-name{font-size:clamp(11.5px,3.2vw,15px);line-height:1.4;letter-spacing:.2px;}
+  .con-ico{font-size:clamp(16px,4.5vw,22px);}
   .con-logo{width:clamp(110px,30vw,150px);}
-  .con-node{max-width:52%;gap:8px;}
+  .con-node{max-width:50%;gap:6px;}
   .con-a{left:6%;top:13%;}
   .con-b{right:6%;top:13%;}
   .con-c{left:6%;bottom:13%;}
   .con-d{right:6%;bottom:13%;}
+}
+
+/* 超窄屏：进一步让四家机构名单行展开、互不挤压 */
+@media (max-width:360px){
+  .constellation{padding:clamp(30px,6vw,40px) clamp(14px,3.2vw,24px);border-radius:20px;}
+  .con-name{font-size:clamp(10.5px,3.1vw,12px);line-height:1.42;letter-spacing:.1px;}
+  .con-ico{font-size:clamp(15px,4.2vw,20px);}
+  .con-logo{width:clamp(84px,24vw,112px);}
+  .con-node{max-width:52%;gap:5px;}
 }
 
 /* =========================================================================
