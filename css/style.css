@@ -502,7 +502,7 @@ main{position:relative;z-index:1;}
 }
 .team-grid{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 .team-card{
-  display:flex;align-items:flex-start;gap:24px;
+  display:flex;align-items:center;gap:24px;
   padding:26px 28px;border-radius:20px;
   background:linear-gradient(155deg,#ffffff 0%, #eef6ff 100%);
   box-shadow:0 30px 60px -34px rgba(0,0,0,.6);
